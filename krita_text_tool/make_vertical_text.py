@@ -2,9 +2,6 @@ import sys
 from krita import *
 import xml.etree.ElementTree as ET
 
-print(sys.version)
-from time import sleep
-
 
 def refersh(doc):
     root_node = doc.rootNode()
@@ -87,7 +84,7 @@ def make_v_text(layer, shape, scale=1):
     shape.deselect()
 
 
-def check():
+def make_active_text_vertical():
     doc = Application.activeDocument()
     doc_root = doc.rootNode()
 

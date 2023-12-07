@@ -1,11 +1,10 @@
 import sys
 from krita import *
 
-from .make_v_text import check
+from .make_vertical_text import make_active_text_vertical
 
 
-class MyExtension(Extension):
-
+class TextExtension(Extension):
     def __init__(self, parent):
         # This is initialising the parent, always important when subclassing.
         super().__init__(parent)
@@ -14,13 +13,11 @@ class MyExtension(Extension):
         pass
 
     def make_v_text(self):
-        check()
+        make_active_text_vertical()
 
     def createActions(self, window):
-        action = window.createAction("myAction", "My Script", "tools/scripts")
+        action = window.createAction("makeTextVertical", "Make Text Vertical", "tools/scripts")
         action.triggered.connect(self.make_v_text)
-        pass
-
 
 # And add the extension to Krita's list of extensions:
 Krita.instance().addExtension(MyExtension(Krita.instance()))
