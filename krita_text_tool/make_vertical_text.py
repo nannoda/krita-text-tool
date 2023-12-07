@@ -2,10 +2,6 @@ import sys
 from krita import *
 import xml.etree.ElementTree as ET
 
-print(sys.version)
-from time import sleep
-
-
 def refersh(doc):
     root_node = doc.rootNode()
     if root_node and len(root_node.childNodes()) > 0:
@@ -106,17 +102,11 @@ def make_active_text_vertical():
     if selected_shape is None:
         print("No shape selected!")
         return
-    print
     print(selected_shape.name())
     scale = doc.resolution() / 72
     print(doc.resolution())
     print(scale)
     make_v_text(active_node, selected_shape, scale)
-    #
-    # sleep(0.5)
+
     refersh(doc)
     doc.setActiveNode(active_node)
-    # active_node.select()
-
-
-# check()

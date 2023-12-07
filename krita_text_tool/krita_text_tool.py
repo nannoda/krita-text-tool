@@ -16,7 +16,7 @@ class TextExtension(Extension):
         make_active_text_vertical()
 
     def createActions(self, window):
-        action = window.createAction("makeTextVAction", "Make Text Vertical", "tools/scripts")
+        action = window.createAction("myAction", "Make Text Vertical", "tools/scripts")
         action.triggered.connect(self.make_v_text)
 
 # And add the extension to Krita's list of extensions:
