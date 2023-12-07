@@ -15,8 +15,6 @@ def build(
     os.makedirs(output_folder, exist_ok=True)
     shutil.move(output_file, os.path.join(output_folder, output_file))
 
-    pass
-
 
 if __name__ == "__main__":
     build()
