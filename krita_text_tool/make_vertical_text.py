@@ -2,6 +2,9 @@ import sys
 from krita import *
 import xml.etree.ElementTree as ET
 
+print(sys.version)
+from time import sleep
+
 
 def refersh(doc):
     root_node = doc.rootNode()
