@@ -1,0 +1,1 @@
+from .krita_text_tool import *

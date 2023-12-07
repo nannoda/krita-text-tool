@@ -5,14 +5,15 @@ import shutil
 
 def build(
         output_folder: str = "build",
+        output_file: str = "krita_text_tool.zip",
 ):
     # Build the project
     # zip the project using git
-    zip_command = "git archive -o myplugin.zip HEAD"
+    zip_command = f"git archive -o {output_file} HEAD"
     os.system(zip_command)
     # copy the zip file to the output folder
     os.makedirs(output_folder, exist_ok=True)
-    shutil.move("myplugin.zip", os.path.join(output_folder, "myplugin.zip"))
+    shutil.move(output_file, os.path.join(output_folder, output_file))
 
     pass
 
