@@ -55,7 +55,7 @@ def make_v_text(layer, shape, scale=1):
     max_text_len = 0
     for child in xml_root:
         print(child.tag, child.attrib)
-        print(child.text)
+        print(child.text.encode("utf-8"))
         if max_text_len < len(child.text):
             max_text_len = len(child.text)
         child.set("x", "0")
@@ -65,7 +65,7 @@ def make_v_text(layer, shape, scale=1):
         child_index += 1
     new_svg_str = ET.tostring(xml_root, encoding="unicode")
     new_svg_str = f"<svg>{new_svg_str}</svg>"
-    print(new_svg_str)
+    print(new_svg_str.encode("utf-8"))
     new_shape = layer.addShapesFromSvg(new_svg_str)[0]
     new_shape.setTransformation(shape.absoluteTransformation())
     print(new_shape)
